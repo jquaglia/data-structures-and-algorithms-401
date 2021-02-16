@@ -1,4 +1,4 @@
-# Reverse an Array
+# Challenge Summary
 <!-- Short summary or background information -->
 Reverse an array
 
