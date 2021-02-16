@@ -1,6 +1,5 @@
 'use strict';
 
-const { expect } = require('@jest/globals');
 const arrayReverse = require('../array-reverse.js');
 
 describe('testing the array reverse module', () => {
