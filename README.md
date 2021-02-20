@@ -7,3 +7,5 @@
 - [array-shift](challenges/arrayShift/array-shift.js)
 
 - [array-binary-search](challenges/arrayBinarySearch/array-binary-search.js)
+
+- [linked-list](challenges/linkedList/linked-list.js)
