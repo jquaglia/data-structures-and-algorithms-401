@@ -1,17 +1,17 @@
 'use strict';
 
 function insertShiftArray(array, value){
-  const middle = array.length / 2;
-  const middleIndex = Math.ceil(middle);
+  // const middle = array.length / 2;
+  const middle = Math.ceil(array.length / 2);
   const result = [];
-  for(let i = 0; i < middleIndex; i++){
+  for(let i = 0; i < middle; i++){
     result[result.length] = array[i];
   }
-  result[middleIndex] = value;
-  for(let i = middleIndex + 1; i < array.length + 1; i++){
-    result[i] = array[i - 1];
+  result[middle] = value;
+  for(let i = middle; i < array.length; i++){
+    result[result.length] = array[i];
   }
-  console.log(result);
+  // console.log(result);
   return result;
 }
 
