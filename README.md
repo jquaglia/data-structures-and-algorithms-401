@@ -9,3 +9,5 @@
 - [array-binary-search](challenges/arrayBinarySearch/array-binary-search.js)
 
 - [linked-list](challenges/linkedList/linked-list.js)
+
+- [more linked-list](challenges/linkedList/linked-list.js)
