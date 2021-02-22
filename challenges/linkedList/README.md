@@ -20,13 +20,25 @@ Creating methods for singly linked lists
 
 - Be sure to follow your language/frameworks standard naming conventions (e.g. C# uses PascalCasing for all method and class names).
 
+- `.append(value)` which adds a new node with the given value to the end of the list
+
+- `.insertBefore(value, newVal)` which add a new node with the given newValue immediately before the first value node
+
+- `.insertAfter(value, newVal)` which add a new node with the given newValue immediately after the first value node
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-- `Insert` Space: O(1), Time: O(1)
+- `insert` Space: O(1), Time: O(1)
 
-- `Includes` Space: O(n), Time: O(n)
+- `includes` Space: O(n), Time: O(n)
 
 - `toString` Space: O(n), Time: O(n)
+
+- `append` Space: O(n), Time: O(n)
+
+- `insertBefore` Space: O(1), Time: O(1)
+
+- `insertAfter` Space: O(1), Time: O(1)
 
 ## Collaborators
 
@@ -35,6 +47,8 @@ Creating methods for singly linked lists
 - Jason Dormier
 
 - Nick Magruder
+
+- Seid
 
 ## Resources
 

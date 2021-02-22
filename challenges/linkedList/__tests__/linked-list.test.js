@@ -68,4 +68,60 @@ describe('testing the linked list module', () => {
     
     expect(test).toEqual('{ Jason } -> { D } -> { Likes } -> { NaN } -> { Not } -> {NULL}');
   });
+
+  it('can successfully add a node to the end of the linked list', () => {
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(1);
+    list.head.next = new linkedList.node(2);
+    list.append(3);
+
+    expect(list.head.next.next.value).toEqual(3);
+  });
+
+  it('can successfully add multiple nodes to the end of the linked list', () => {
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(1);
+    list.append(2);
+    list.append(3);
+
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(3);
+  });
+
+  it('can successfully insert a node before a node located in the middle of a linked list', () => {
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(1);
+    list.head.next = new linkedList.node(2);
+    list.insertBefore(2, 4);
+
+    // console.log('LIST', list);
+    expect(list.head.next.value).toEqual(4);
+  });
+
+  it('can successfully insert a node before before the first node of a linked list', () => {
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(1);
+    list.head.next = new linkedList.node(2);
+    list.insertBefore(1, 4);
+
+    expect(list.head.value).toEqual(4);
+  });
+
+  it('can successfully insert a node after a node in the middle of the linked list', () => {
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(1);
+    list.head.next = new linkedList.node(2);
+    list.insertAfter(1, 4);
+
+    expect(list.head.next.value).toEqual(4);
+  });
+
+  it('can successfully insert a node after the last node of the linked list', () =>{
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(1);
+    list.head.next = new linkedList.node(2);
+    list.insertAfter(2, 4);
+
+    expect(list.head.next.next.value).toEqual(4);
+  });
 });
