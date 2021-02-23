@@ -42,7 +42,7 @@ describe('testing the linked list module', () => {
     list.head.next.next = new linkedList.node(2);
     list.head.next.next.next = new linkedList.node(3);
     const doesInclude = list.includes(2);
-    
+
     expect(doesInclude).toEqual(true);
   });
 
@@ -65,7 +65,7 @@ describe('testing the linked list module', () => {
     list.head.next.next.next = new linkedList.node('Not');
     list.insert('Jason');
     const test = list.toString();
-    
+
     expect(test).toEqual('{ Jason } -> { D } -> { Likes } -> { NaN } -> { Not } -> {NULL}');
   });
 
@@ -116,12 +116,64 @@ describe('testing the linked list module', () => {
     expect(list.head.next.value).toEqual(4);
   });
 
-  it('can successfully insert a node after the last node of the linked list', () =>{
+  it('can successfully insert a node after the last node of the linked list', () => {
     const list = new linkedList.ll();
     list.head = new linkedList.node(1);
     list.head.next = new linkedList.node(2);
     list.insertAfter(2, 4);
 
     expect(list.head.next.next.value).toEqual(4);
+  });
+
+  it('should return null where k is greater than the lenght of the linked list', () => {
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(0);
+    list.head.next = new linkedList.node(1);
+    list.head.next.next = new linkedList.node(2);
+    list.head.next.next.next = new linkedList.node(3);
+    const kReturn = list.kthFromEnd(7);
+
+    expect(kReturn).toEqual(null);
+  });
+
+  it('should return where k and the length of the list are the same', () => {
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(0);
+    list.head.next = new linkedList.node(1);
+    list.head.next.next = new linkedList.node(2);
+    list.head.next.next.next = new linkedList.node(3);
+    const kReturn = list.kthFromEnd(4);
+
+    expect(kReturn).toEqual(0);
+  });
+
+  it('should return where k is not a positive integer', () => {
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(0);
+    list.head.next = new linkedList.node(1);
+    list.head.next.next = new linkedList.node(2);
+    list.head.next.next.next = new linkedList.node(3);
+    const kReturn = list.kthFromEnd(7);
+
+    expect(kReturn).toEqual(null);
+  });
+
+  it('should return where the linked list is of a size 1', () => {
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(0);
+    const kReturn = list.kthFromEnd(1);
+
+    expect(kReturn).toEqual(0);
+  });
+
+  it('should return the value where k is not at the end, but somewhere in the middle', () => {
+    const list = new linkedList.ll();
+    list.head = new linkedList.node(0);
+    list.head.next = new linkedList.node(1);
+    list.head.next.next = new linkedList.node(2);
+    list.head.next.next.next = new linkedList.node(3);
+    const kReturn = list.kthFromEnd(2);
+
+    expect(kReturn).toEqual(2);
   });
 });

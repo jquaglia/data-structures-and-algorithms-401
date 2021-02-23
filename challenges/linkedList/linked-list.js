@@ -7,7 +7,6 @@ class Node {
   }
 }
 
-
 class LinkedList {
   constructor() {
     this.head = null;
@@ -85,11 +84,35 @@ class LinkedList {
       current = current.next;
     }
   }
+
+  kthFromEnd(k) {
+    if(this.head === null || k < 1) {
+      return null;
+    }
+
+    let pointerOne = this.head;
+    let pointerTwo = this.head;
+    for(let i = 0; i < k - 1; i++){
+      if (pointerTwo === null) {
+        return null;
+      }
+      pointerTwo = pointerTwo.next;
+    }
+
+    while(pointerTwo.next !== null) {
+      pointerOne = pointerOne.next;
+      pointerTwo = pointerTwo.next;
+    }
+
+    console.log('ONE', pointerOne);
+    return pointerOne.value;
+    // console.log('COUNT', getCount());
+  }
 }
 
 // const ll = new LinkedList();
 
-// ll.head = new Node({ name: 'Jacob' });
+// ll.head = new Node(0);
 // // head: (0) => null
 // ll.head.next = new Node(1);
 // // head: (0) => (1) => null
@@ -97,6 +120,8 @@ class LinkedList {
 // // head: (0) => (1) => (2) => null
 // ll.head.next.next.next = new Node(3);
 // // head: (0) => (1) => (2) => (3) =>  null
+
+// ll.kthFromEnd(2);
 
 module.exports = {
   ll: LinkedList,
