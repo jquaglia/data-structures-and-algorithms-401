@@ -26,6 +26,8 @@ Creating methods for singly linked lists
 
 - `.insertAfter(value, newVal)` which add a new node with the given newValue immediately after the first value node
 
+- `.kthFromEnd(k)` Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 - `insert` Space: O(1), Time: O(1)
@@ -40,6 +42,8 @@ Creating methods for singly linked lists
 
 - `insertAfter` Space: O(1), Time: O(1)
 
+- `kthFromEnd` Space: O(1), Time: O(1)
+
 ## Collaborators
 
 - Carly Dekock
@@ -52,4 +56,6 @@ Creating methods for singly linked lists
 
 ## Resources
 
-[Link to Codefellows Docs](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-05/resources/singly_linked_list.html)
+- [Link to Codefellows Docs](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-05/resources/singly_linked_list.html)
+
+- [Link to Resource](https://stackoverflow.com/questions/2598348/how-to-find-nth-element-from-the-end-of-a-singly-linked-list)
