@@ -13,3 +13,5 @@
 - [more linked-list](challenges/linkedList/linked-list.js)
 
 - [even more linked-list](challenges/linkedList/linked-list.js)
+
+- [zip linked lists](challenges/llZip/ll-zip.js)
