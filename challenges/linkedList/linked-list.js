@@ -104,7 +104,7 @@ class LinkedList {
       pointerTwo = pointerTwo.next;
     }
 
-    console.log('ONE', pointerOne);
+    // console.log('ONE', pointerOne);
     return pointerOne.value;
     // console.log('COUNT', getCount());
   }
@@ -134,8 +134,43 @@ class LinkedList {
 // // head: (0) => (1) => null
 // ll.head.next.next = new Node(2);
 // // head: (0) => (1) => (2) => null
-// ll.head.next.next.next = new Node(3);
-// // head: (0) => (1) => (2) => (3) =>  null
+// ll.head.next.next.next = new Node(1);
+// // head: (0) => (1) => (2) => (3) => null
+// ll.head.next.next.next.next = new Node(0);
+// // head: (0) => (1) => (2) => (3) => (4) => null
+
+// function reversedArray(arr) {
+//   const result = [];
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     result[result.length] = arr[i];
+//   }
+//   return result;
+// }
+
+// function isPalindrome(LL) {
+//   let current = LL.head;
+//   let arr = [];
+
+//   while (current) {
+//     arr[arr.length] = current.value;
+//     current = current.next;
+//   }
+
+//   let reverse = reversedArray(arr);
+//   console.log('REVERSE', reverse);
+//   console.log('ARR', arr);
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] !== reverse[i]) {
+//       return false;
+//     } else {
+//       return true;
+//     }
+//   }
+// }
+
+// console.log(isPalindrome(ll));
+
 
 
 // ll.kthFromEnd(2);
