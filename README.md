@@ -1,5 +1,7 @@
 # data-structures-and-algorithms-401
 
+This is a collection of all of the code challenges I have done in 401 JS at Code Fellows. I also have individual README's for each challenge located in that challenge's folder.
+
 ## Code Challenge Table of Contents
 
 - [array-reverse](challenges/arrayReverse/array-reverse.js)
@@ -15,3 +17,17 @@
 - [even more linked-list](challenges/linkedList/linked-list.js)
 
 - [zip linked lists](challenges/llZip/ll-zip.js)
+
+- [stacks and queues](challenges/stacksAndQueues/stacks-and-queues.js)
+
+## Collaborators
+
+- Bill Moreno
+
+- Jason Dormier
+
+- Carly Dekock
+
+- Seid Mohamed
+
+- Nick Magruder
