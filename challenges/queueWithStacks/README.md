@@ -32,3 +32,5 @@ Implement a Queue using two Stacks
 ## Resources
 
 - [Link to Codefellows Docs](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-10/resources/stacks_and_queues.html)
+
+- [link to stackoverflow help with this](https://stackoverflow.com/questions/69192/how-to-implement-a-queue-using-two-stacks)
