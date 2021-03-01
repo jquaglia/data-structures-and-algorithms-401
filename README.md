@@ -20,6 +20,8 @@ This is a collection of all of the code challenges I have done in 401 JS at Code
 
 - [stacks and queues](challenges/stacksAndQueues/stacks-and-queues.js)
 
+- [implement queue with 2 stacks](challenges/queueWithStacks/queue-with-stacks.js)
+
 ## Collaborators
 
 - Bill Moreno
