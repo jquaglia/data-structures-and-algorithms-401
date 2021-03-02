@@ -21,6 +21,6 @@ describe('testing Pseudo Queue functionality', () => {
   it('should extract value from the pseudo queue', () => {
     pseudoQueue.dequeue();
     // console.log(pseudoQueue.dequeue().value);
-    expect(pseudoQueue.dequeue().value).toEqual(15);
+    expect(pseudoQueue.dequeue()).toEqual(15);
   });
 });

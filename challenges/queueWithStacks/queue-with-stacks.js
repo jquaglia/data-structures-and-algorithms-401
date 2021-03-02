@@ -62,7 +62,7 @@ class PseudoQueue {
         this.front.push(this.rear.pop());
       }
     }
-    return this.front.pop();
+    return this.front.pop().value;
   }
 }
 
