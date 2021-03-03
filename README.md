@@ -24,6 +24,8 @@ This is a collection of all of the code challenges I have done in 401 JS at Code
 
 - [First-in, First out Animal Shelter](challenges/fifoAnimalShelter/fifo-animal-shelter.js)
 
+- [Multi-bracket Validation](challenges/multiBracketValidation/multi-bracket-validation.js)
+
 ## Collaborators
 
 - Bill Moreno
