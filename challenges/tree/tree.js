@@ -16,17 +16,14 @@ class BiTree {
   // recusive depth first traversal function
   preOrder() {
     try {
+      let current = this.root;
       const array = [];
       const preOrder = (node) => {
-        array.push(node.value);
-        if (node.left) {
-          preOrder(node.left);
-        }
-        if (node.right) {
-          preOrder(node.right);
-        }
+        array[array.length] = node.value;
+        if (node.left) { preOrder(node.left); }
+        if (node.right) { preOrder(node.right); }
       };
-      let current = this.root;
+
       preOrder(current);
       return array;
 
@@ -38,17 +35,14 @@ class BiTree {
   // recusive depth first traversal function
   postOrder() {
     try {
+      let current = this.root;
       const array = [];
       const postOrder = (node) => {
-        if (node.left) {
-          postOrder(node.left);
-        }
-        if (node.right) {
-          postOrder(node.right);
-        }
-        array.push(node.value);
+        if (node.left) { postOrder(node.left); }
+        if (node.right) { postOrder(node.right); }
+        array[array.length] = node.value;
       };
-      let current = this.root;
+
       postOrder(current);
       return array;
 
@@ -60,14 +54,14 @@ class BiTree {
   // recusive depth first traversal function
   inOrder() {
     try {
-      const array = [];
       let current = this.root;
+      const array = [];
       const inOrder = (node) => {
         if (node.left) { inOrder(node.left); }
-        // array.push(node.value);
         array[array.length] = node.value;
         if (node.right) { inOrder(node.right); }
       };
+
       inOrder(current);
       return array;
 
@@ -102,10 +96,7 @@ class BSTree {
     let current = this.root;
     let newNode = new Node(value);
 
-    if (!current) {
-      this.root = newNode;
-      return;
-    }
+    if (!current) { return this.root = newNode; }
 
     const insertNode = (node, newNode) => {
       if (newNode.value < node.value) {
@@ -121,17 +112,14 @@ class BSTree {
   }
 
   inOrder() {
+    let current = this.root;
     const array = [];
     const inOrder = (node) => {
-      if (node.left) {
-        inOrder(node.left);
-      }
-      array.push(node.value);
-      if (node.right) {
-        inOrder(node.right);
-      }
+      if (node.left) { inOrder(node.left); }
+      array[array.length] = node.value;
+      if (node.right) { inOrder(node.right); }
     };
-    let current = this.root;
+
     inOrder(current);
     return array;
   }
@@ -171,8 +159,8 @@ bTree.add(2);
 bTree.add(5);
 bTree.add(1);
 
-console.log(bTree.contains(1));
-console.log(bTree.inOrder());
+// console.log(bTree.contains(1));
+// console.log(bTree.inOrder());
 // console.log(bTree.root);
 
 module.exports = {
