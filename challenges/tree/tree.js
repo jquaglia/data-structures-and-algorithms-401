@@ -29,7 +29,7 @@ class BiTree {
       let current = this.root;
       preOrder(current);
       return array;
-  
+
     } catch (error) {
       console.error('Error with the tree', error);
     }
@@ -61,22 +61,35 @@ class BiTree {
   inOrder() {
     try {
       const array = [];
-      const inOrder = (node) => {
-        if (node.left) {
-          inOrder(node.left);
-        }
-        array.push(node.value);
-        if (node.right) {
-          inOrder(node.right);
-        }
-      };
       let current = this.root;
+      const inOrder = (node) => {
+        if (node.left) { inOrder(node.left); }
+        // array.push(node.value);
+        array[array.length] = node.value;
+        if (node.right) { inOrder(node.right); }
+      };
       inOrder(current);
       return array;
-      
+
     } catch (error) {
       console.error('Error with the tree', error);
     }
+  }
+
+  findMaxValue() {
+    let current = this.root;
+    if (!current) { throw 'Error, no nodes in tree'; }
+
+    const findMax = (node) => {
+      if (!node) { return; }
+      let result = node.value;
+      let leftResult = findMax(node.left);
+      let rightResult = findMax(node.right);
+      if (leftResult > result) { result = leftResult; }
+      if (rightResult > result) { result = rightResult; }
+      return result;
+    };
+    return findMax(current);
   }
 }
 
@@ -124,52 +137,42 @@ class BSTree {
   }
 
   contains(value) {
-    const array = [];
-    const inOrder = (node) => {
-      if (node.left) {
-        inOrder(node.left);
-      }
-      array.push(node.value);
-      if (node.right) {
-        inOrder(node.right);
-      }
-    };
     let current = this.root;
+    const map = {};
+    const inOrder = (node) => {
+      if (node.left) { inOrder(node.left); }
+      map[node.value] = node.value;
+      if (node.right) { inOrder(node.right); }
+    };
     inOrder(current);
-    
-    let i = array.length;
-    while(i--) {
-      if (array[i] === value) {
-        return true;
-      }
-    }
-    return false;
+    return !!(map[value]);
   }
 }
 
-// const tree = new BiTree();
-// tree.root = new Node(5);
-// tree.root.left = new Node(10);
-// tree.root.left.left = new Node(0);
-// tree.root.left.right = new Node(20);
-// tree.root.right = new Node(15);
-// tree.root.right.right = new Node(25);
+const tree = new BiTree();
+tree.root = new Node(5);
+tree.root.left = new Node(10);
+tree.root.left.left = new Node(0);
+tree.root.left.right = new Node(20);
+tree.root.right = new Node(15);
+tree.root.right.right = new Node(25);
 
 // console.log(tree);
 // console.log(tree.preOrder());
 // console.log(tree.preorder(tree.root));
 // console.log(tree.postOrder());
 // console.log(tree.inOrder());
+// console.log(tree.root);
+// console.log(tree.findMaxValue());
 
-// const bTree = new BSTree();
-// // bTree.root = new Node(3);
-// bTree.add(3);
-// bTree.add(2);
-// bTree.add(5);
-// bTree.add(1);
+const bTree = new BSTree();
+bTree.add(3);
+bTree.add(2);
+bTree.add(5);
+bTree.add(1);
 
-// console.log(bTree.contains(8));
-// console.log(bTree.inOrder());
+console.log(bTree.contains(1));
+console.log(bTree.inOrder());
 // console.log(bTree.root);
 
 module.exports = {

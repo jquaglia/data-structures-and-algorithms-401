@@ -157,20 +157,13 @@ function isPalindrome(LL) {
   }
 
   let reverse = reversedArray(arr);
-  console.log('REVERSE', reverse);
-  console.log('ARR', arr);
 
   for (let i = 0; i < arr.length; i++) {
     return !!(arr[i] === reverse[i]);
-  //   if (arr[i] !== reverse[i]) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
   }
 }
 
-console.log(isPalindrome(ll));
+// console.log(isPalindrome(ll));
 
 
 
