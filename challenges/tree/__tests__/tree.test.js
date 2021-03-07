@@ -14,7 +14,6 @@ describe('testing tree methods', () => {
   biTree.root.right.right = nodeA;
 
   it('can successfully instantiate an empty tree', () => {
-
     expect(tree.root).toEqual(null);
   });
 
@@ -45,23 +44,23 @@ describe('testing tree methods', () => {
   });
 
   it('Can successfully return a collection from a preorder traversal', () => {
-
     expect(biTree.preOrder()).toEqual([5, 10, 15, 5]);
   });
 
   it('Can successfully return a collection from a post order traversal', () => {
-
     expect(biTree.postOrder()).toEqual([10, 5, 15, 5]);
   });
 
   it('Can successfully return a collection from a preorder traversal', () => {
-
     expect(biTree.inOrder()).toEqual([10, 5, 15, 5]);
   });
 
   it('Can successfully determine with a boolean if a value is in a BSTree', () => {
-
     expect(tree.contains(8)).toEqual(false);
     expect(tree.contains(9)).toEqual(true);
+  });
+
+  it('Can successfully find the max value in a Binary Tree', () => {
+    expect(biTree.findMaxValue()).toEqual(15);
   });
 });

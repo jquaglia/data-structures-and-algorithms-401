@@ -16,20 +16,17 @@ class BiTree {
   // recusive depth first traversal function
   preOrder() {
     try {
+      let current = this.root;
       const array = [];
       const preOrder = (node) => {
-        array.push(node.value);
-        if (node.left) {
-          preOrder(node.left);
-        }
-        if (node.right) {
-          preOrder(node.right);
-        }
+        array[array.length] = node.value;
+        if (node.left) { preOrder(node.left); }
+        if (node.right) { preOrder(node.right); }
       };
-      let current = this.root;
+
       preOrder(current);
       return array;
-  
+
     } catch (error) {
       console.error('Error with the tree', error);
     }
@@ -38,17 +35,14 @@ class BiTree {
   // recusive depth first traversal function
   postOrder() {
     try {
+      let current = this.root;
       const array = [];
       const postOrder = (node) => {
-        if (node.left) {
-          postOrder(node.left);
-        }
-        if (node.right) {
-          postOrder(node.right);
-        }
-        array.push(node.value);
+        if (node.left) { postOrder(node.left); }
+        if (node.right) { postOrder(node.right); }
+        array[array.length] = node.value;
       };
-      let current = this.root;
+
       postOrder(current);
       return array;
 
@@ -60,23 +54,36 @@ class BiTree {
   // recusive depth first traversal function
   inOrder() {
     try {
+      let current = this.root;
       const array = [];
       const inOrder = (node) => {
-        if (node.left) {
-          inOrder(node.left);
-        }
-        array.push(node.value);
-        if (node.right) {
-          inOrder(node.right);
-        }
+        if (node.left) { inOrder(node.left); }
+        array[array.length] = node.value;
+        if (node.right) { inOrder(node.right); }
       };
-      let current = this.root;
+
       inOrder(current);
       return array;
-      
+
     } catch (error) {
       console.error('Error with the tree', error);
     }
+  }
+
+  findMaxValue() {
+    let current = this.root;
+    if (!current) { throw 'Error, no nodes in tree'; }
+
+    const findMax = (node) => {
+      if (!node) { return; }
+      let result = node.value;
+      let leftResult = findMax(node.left);
+      let rightResult = findMax(node.right);
+      if (leftResult > result) { result = leftResult; }
+      if (rightResult > result) { result = rightResult; }
+      return result;
+    };
+    return findMax(current);
   }
 }
 
@@ -89,10 +96,7 @@ class BSTree {
     let current = this.root;
     let newNode = new Node(value);
 
-    if (!current) {
-      this.root = newNode;
-      return;
-    }
+    if (!current) { return this.root = newNode; }
 
     const insertNode = (node, newNode) => {
       if (newNode.value < node.value) {
@@ -108,67 +112,54 @@ class BSTree {
   }
 
   inOrder() {
+    let current = this.root;
     const array = [];
     const inOrder = (node) => {
-      if (node.left) {
-        inOrder(node.left);
-      }
-      array.push(node.value);
-      if (node.right) {
-        inOrder(node.right);
-      }
+      if (node.left) { inOrder(node.left); }
+      array[array.length] = node.value;
+      if (node.right) { inOrder(node.right); }
     };
-    let current = this.root;
+
     inOrder(current);
     return array;
   }
 
   contains(value) {
-    const array = [];
-    const inOrder = (node) => {
-      if (node.left) {
-        inOrder(node.left);
-      }
-      array.push(node.value);
-      if (node.right) {
-        inOrder(node.right);
-      }
-    };
     let current = this.root;
+    const map = {};
+    const inOrder = (node) => {
+      if (node.left) { inOrder(node.left); }
+      map[node.value] = node.value;
+      if (node.right) { inOrder(node.right); }
+    };
     inOrder(current);
-    
-    let i = array.length;
-    while(i--) {
-      if (array[i] === value) {
-        return true;
-      }
-    }
-    return false;
+    return !!(map[value]);
   }
 }
 
-// const tree = new BiTree();
-// tree.root = new Node(5);
-// tree.root.left = new Node(10);
-// tree.root.left.left = new Node(0);
-// tree.root.left.right = new Node(20);
-// tree.root.right = new Node(15);
-// tree.root.right.right = new Node(25);
+const tree = new BiTree();
+tree.root = new Node(5);
+tree.root.left = new Node(10);
+tree.root.left.left = new Node(0);
+tree.root.left.right = new Node(20);
+tree.root.right = new Node(15);
+tree.root.right.right = new Node(25);
 
 // console.log(tree);
 // console.log(tree.preOrder());
 // console.log(tree.preorder(tree.root));
 // console.log(tree.postOrder());
 // console.log(tree.inOrder());
+// console.log(tree.root);
+// console.log(tree.findMaxValue());
 
-// const bTree = new BSTree();
-// // bTree.root = new Node(3);
-// bTree.add(3);
-// bTree.add(2);
-// bTree.add(5);
-// bTree.add(1);
+const bTree = new BSTree();
+bTree.add(3);
+bTree.add(2);
+bTree.add(5);
+bTree.add(1);
 
-// console.log(bTree.contains(8));
+// console.log(bTree.contains(1));
 // console.log(bTree.inOrder());
 // console.log(bTree.root);
 
