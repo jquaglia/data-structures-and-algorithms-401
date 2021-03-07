@@ -139,29 +139,29 @@ ll.head.next.next.next = new Node(1);
 ll.head.next.next.next.next = new Node(0);
 // head: (0) => (1) => (2) => (3) => (4) => null
 
-function reversedArray(arr) {
-  const result = [];
-  for (let i = arr.length - 1; i >= 0; i--) {
-    result[result.length] = arr[i];
-  }
-  return result;
-}
+// function reversedArray(arr) {
+//   const result = [];
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     result[result.length] = arr[i];
+//   }
+//   return result;
+// }
 
-function isPalindrome(LL) {
-  let current = LL.head;
-  let arr = [];
+// function isPalindrome(LL) {
+//   let current = LL.head;
+//   let arr = [];
 
-  while (current) {
-    arr[arr.length] = current.value;
-    current = current.next;
-  }
+//   while (current) {
+//     arr[arr.length] = current.value;
+//     current = current.next;
+//   }
 
-  let reverse = reversedArray(arr);
+//   let reverse = reversedArray(arr);
 
-  for (let i = 0; i < arr.length; i++) {
-    return !!(arr[i] === reverse[i]);
-  }
-}
+//   for (let i = 0; i < arr.length; i++) {
+//     return !!(arr[i] === reverse[i]);
+//   }
+// }
 
 // console.log(isPalindrome(ll));
 

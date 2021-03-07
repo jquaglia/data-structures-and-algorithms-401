@@ -20,6 +20,8 @@ Trees
 
 1. Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 
+1. Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
@@ -33,7 +35,9 @@ Trees
 
 - `contains` Space: O(1), Time: O(h)
 
-- `findMax` Space: O(n), Time: O()
+- `findMax` Space: O(n), Time: O(1)
+
+- `breadthFirst` Space: O(n^2), Time: O(n^2)
 
 ## Collaborators
 
@@ -49,6 +53,10 @@ Trees
 
 - [codefellows docs](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-15/resources/Trees.html)
 
+- [this helped ALOT with breadth-first traversal](https://stackoverflow.com/questions/21194678/recursive-breadth-first-traversal-of-binary-tree)
+
+- [flattening arrays](https://stackoverflow.com/questions/10865025/merge-flatten-an-array-of-arrays)
+
 ## Whiteboards
 
 Tree Traversal
@@ -56,3 +64,6 @@ Tree Traversal
 
 Find Max in Binary Tree
 ![whiteboard of finding max](../../assets/tree-find-max.png)
+
+Breadth-first Traversal
+![whiteboard of breadth first traversal](../../assets/breadth-first.png)

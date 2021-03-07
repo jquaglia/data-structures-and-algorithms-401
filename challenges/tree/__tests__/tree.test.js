@@ -63,4 +63,8 @@ describe('testing tree methods', () => {
   it('Can successfully find the max value in a Binary Tree', () => {
     expect(biTree.findMaxValue()).toEqual(15);
   });
+
+  it('Can successfully return a collection from a Breadth First traversal', () => {
+    expect(biTree.breadthFirstTraversal()).toEqual([5, 10, 15, 5]);
+  });
 });

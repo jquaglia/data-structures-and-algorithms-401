@@ -85,6 +85,36 @@ class BiTree {
     };
     return findMax(current);
   }
+
+  breadthFirstTraversal() {
+    let current = this.root;
+    const levels = [];
+
+    const traverse = (node, depth) => {
+      let array = levels[depth];
+      if (!node) { return null; }
+      if (!levels[depth]) { levels[depth] = [node.value]; }
+      else { array[array.length] = node.value; }
+      traverse(node.left, depth + 1);
+      traverse(node.right, depth + 1);
+    };
+    traverse(current, 0);
+
+    const flatten = (arr, result = []) => {
+      for(let i = 0; i < arr.length; i++){
+        const value = arr[i];
+        if(Array.isArray(value)){
+          flatten(value, result);
+        } else {
+          result[result.length] = value;
+        }
+      }
+      return result;
+    };
+
+    // I hate myself for doing this but RECURSION!
+    return flatten(levels);
+  }
 }
 
 class BSTree {
@@ -151,13 +181,14 @@ tree.root.right.right = new Node(25);
 // console.log(tree.postOrder());
 // console.log(tree.inOrder());
 // console.log(tree.root);
+console.log(tree.breadthFirstTraversal());
 // console.log(tree.findMaxValue());
 
-const bTree = new BSTree();
-bTree.add(3);
-bTree.add(2);
-bTree.add(5);
-bTree.add(1);
+// const bTree = new BSTree();
+// bTree.add(3);
+// bTree.add(2);
+// bTree.add(5);
+// bTree.add(1);
 
 // console.log(bTree.contains(1));
 // console.log(bTree.inOrder());
