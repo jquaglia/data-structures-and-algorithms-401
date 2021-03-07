@@ -30,6 +30,8 @@ This is a collection of all of the code challenges I have done in 401 JS at Code
 
 - [day two of trees](challenges/tree/tree.js)
 
+- [day three of trees](challenges/tree/tree.js)
+
 ## Collaborators
 
 - Bill Moreno
