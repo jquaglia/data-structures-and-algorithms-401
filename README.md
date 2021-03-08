@@ -32,6 +32,8 @@ This is a collection of all of the code challenges I have done in 401 JS at Code
 
 - [day three of trees](challenges/tree/tree.js)
 
+- [FizzBuzz tree](challenges/fizzBuzzTree/fizz-buzz-tree.js)
+
 ## Collaborators
 
 - Bill Moreno
