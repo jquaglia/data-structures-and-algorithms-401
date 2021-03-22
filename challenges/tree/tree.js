@@ -132,7 +132,8 @@ class BSTree {
       if (newNode.value < node.value) {
         if (!node.left) { node.left = newNode; }
         else { insertNode(node.left, newNode); }
-      } else {
+      }
+      else {
         if (!node.right) { node.right = newNode; }
         else { insertNode(node.right, newNode); }
       }
