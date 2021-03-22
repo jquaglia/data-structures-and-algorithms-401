@@ -34,6 +34,8 @@ This is a collection of all of the code challenges I have done in 401 JS at Code
 
 - [FizzBuzz tree](challenges/fizzBuzzTree/fizz-buzz-tree.js)
 
+- [Insertion Sort Blog](challenges/insertionSort/insertion-sort.js)
+
 ## Collaborators
 
 - Bill Moreno

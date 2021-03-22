@@ -28,9 +28,12 @@ Once you are done with your article, code a working, tested implementation of In
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-Space: O()
+- Time: O(n^2)
+  - The basic operation of this algorithm is comparison. This will happen n * (n-1) number of times…concluding the algorithm to be n squared.
 
-Time: O()
+- Space: O(1)
+
+  - No additional space is being created. This array is being sorted in place…keeping the space at constant O(1).
 
 ## Collaborators
 
@@ -44,9 +47,9 @@ Time: O()
 
 ## Resources
 
-- [codefellows docs](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-15/resources/Trees.html)
+- [codefellows docs](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-26/)
 
 ## Whiteboards
 
 Tree Traversal
-![whiteboard of insertion sort](../../assets/insertion-sort.png)
+![whiteboard of insertion sort](../../assets/insertionSort.png)
