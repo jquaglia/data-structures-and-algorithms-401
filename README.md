@@ -38,7 +38,9 @@ This is a collection of all of the code challenges I have done in 401 JS at Code
 
 - [Merge Sort Blog](challenges/mergeSort/merge-sort.js)
 
-- [Quick Sort Blog](challenges/quick-sort.js)
+- [Quick Sort Blog](challenges/quickSort/quick-sort.js)
+
+- [Hash Table](challenges/hashtable/hashtable.js)
 
 ## Collaborators
 
