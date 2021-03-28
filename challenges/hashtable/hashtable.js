@@ -79,7 +79,7 @@ table.add('Jason', 'boomshackalacka');
 table.add('asonJ', 'banana');
 
 
-console.log(table.get('asonJ'));
+// console.log(table.get('asonJ'));
 
 // console.log(table.hash('Jason'));
 
