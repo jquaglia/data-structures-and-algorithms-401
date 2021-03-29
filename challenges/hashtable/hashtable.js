@@ -62,7 +62,7 @@ class HashTable {
 
   get(key) {
     let hash = this._hash(key);
-    let bucket = this.buckets[hash]/*.head.value[key]*/;
+    let bucket = this.buckets[hash];
     let current = bucket.head;
 
     while (current) {

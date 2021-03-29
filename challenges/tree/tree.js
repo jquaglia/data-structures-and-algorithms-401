@@ -101,9 +101,9 @@ class BiTree {
     traverse(current, 0);
 
     const flatten = (arr, result = []) => {
-      for(let i = 0; i < arr.length; i++){
+      for (let i = 0; i < arr.length; i++) {
         const value = arr[i];
-        if(Array.isArray(value)){
+        if (Array.isArray(value)) {
           flatten(value, result);
         } else {
           result[result.length] = value;
