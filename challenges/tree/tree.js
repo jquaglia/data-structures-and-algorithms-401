@@ -182,7 +182,7 @@ tree.root.right.right = new Node(25);
 // console.log(tree.postOrder());
 // console.log(tree.inOrder());
 // console.log(tree.root);
-console.log(tree.breadthFirstTraversal());
+// console.log(tree.breadthFirstTraversal());
 // console.log(tree.findMaxValue());
 
 // const bTree = new BSTree();

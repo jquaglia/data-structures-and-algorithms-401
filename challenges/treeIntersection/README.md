@@ -28,4 +28,4 @@ Find common values in 2 binary trees.
 
 ## Resources
 
-- [Link to Codefellows Docs](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-30/resources/Hashtables.html)
+- [Link to Codefellows Docs](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-15/resources/Trees.html)
