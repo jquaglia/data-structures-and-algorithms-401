@@ -32,4 +32,4 @@ Implement a Hashtable with the following methods:
 
 ## Resources
 
-- [Link to Codefellows Docs](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-30/LAB)
+- [Link to Codefellows Docs](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-30/resources/Hashtables.html)
