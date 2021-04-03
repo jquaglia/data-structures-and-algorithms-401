@@ -34,7 +34,8 @@ class Graph {
   // helper function to help with traversals
   getNeighbors(vertex) {
     if (!this.adjacencyList.has(vertex)) {
-      throw new Error('no neighbors for that vertex');
+      return null;
+      // throw new Error('no neighbors for that vertex');
     }
 
     return [...this.adjacencyList.get(vertex)];
@@ -98,6 +99,7 @@ class Graph {
       let currentVertex = stack.pop();
       visitedVertices.add(currentVertex);
       let neighbors = this.getNeighbors(currentVertex);
+      if (!neighbors) { return null; }
 
       for (let neighbor of neighbors) {
         let neighborVertex = neighbor.vertex;
@@ -111,8 +113,38 @@ class Graph {
     return visitedVertices;
   }
 
-  size() {
-    
+  size(vertex) {
+    if (this.depthFirst(vertex)) {
+      return this.depthFirst(vertex).size;
+    } else { return null; }
+  }
+
+  includes(vertex, value) {
+
+    const stack = [];
+    const visitedVertices = new Set();
+
+    stack.push(vertex);
+    visitedVertices.add(vertex);
+
+    while (stack.length) {
+      let currentVertex = stack.pop();
+      if (currentVertex.value === value) {
+        return true;
+      }
+      visitedVertices.add(currentVertex);
+      let neighbors = this.getNeighbors(currentVertex);
+
+      for (let neighbor of neighbors) {
+        let neighborVertex = neighbor.vertex;
+
+        if (visitedVertices.has(neighborVertex)) {
+          continue;
+        }
+        else { stack.push(neighborVertex); }
+      }
+    }
+    return false;
   }
 }
 
@@ -140,10 +172,12 @@ test.addEdge(four, two);
 test.addEdge(four, five);
 test.addEdge(two, six);
 
-const setSpread = test.breadthFirst(one);
-console.log(...setSpread);
-console.log(test.depthFirstRecurse(one));
-console.log(test.depthFirst(one));
+// const setSpread = test.breadthFirst(one);
+// console.log(...setSpread);
+// console.log(test.depthFirstRecurse(one));
+// console.log(test.depthFirst(one));
+// console.log(test.size(one));
+// console.log(test.includes(one, 'five'));
 
 module.exports = {
   Vertex,
