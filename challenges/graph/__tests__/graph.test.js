@@ -70,4 +70,38 @@ describe('testing the instantiating of a proper hash table', () => {
     // console.log(graphThree.size(null));
     expect(graphThree.size(null)).toEqual(null);
   });
+
+  it('Should complete a breadth first traversal of a graph', () => {
+    // console.log(graph.breadthFirst(one));
+    const graphFour = new test.Graph();
+    const Pandora = new test.Vertex('Pandora');
+    const Arendelle = new test.Vertex('Arendelle');
+    const Metroville = new test.Vertex('Metroville');
+    const Monstropolis = new test.Vertex('Monstropolis');
+    const Narnia = new test.Vertex('Narnia');
+    const Naboo = new test.Vertex('Naboo');
+
+    graphFour.addVertex(Pandora);
+    graphFour.addVertex(Arendelle);
+    graphFour.addVertex(Metroville);
+    graphFour.addVertex(Monstropolis);
+    graphFour.addVertex(Narnia);
+    graphFour.addVertex(Naboo);
+
+    graphFour.addEdge(Pandora, Arendelle);
+    graphFour.addEdge(Arendelle, Metroville);
+    graphFour.addEdge(Arendelle, Monstropolis);
+    graphFour.addEdge(Metroville, Narnia);
+    graphFour.addEdge(Metroville, Naboo);
+    graphFour.addEdge(Monstropolis, Metroville);
+    graphFour.addEdge(Monstropolis, Naboo);
+    graphFour.addEdge(Naboo, Narnia);
+
+    console.log(graphFour.breadthFirst(Pandora));
+    expect(graphFour.breadthFirst(Pandora)).toBeTruthy();
+    expect(graphFour.breadthFirst(Pandora).size).toEqual(6);
+    expect(graphFour.breadthFirst(Pandora).has(Arendelle)).toEqual(true);
+    expect(graphFour.breadthFirst(Pandora).has(Naboo)).toEqual(true);
+    expect(graphFour.breadthFirst(Pandora).has(Metroville)).toEqual(true);
+  });
 });

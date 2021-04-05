@@ -32,6 +32,8 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 
     - Returns all of the nodes in the graph as a collection (set, list, or similar)
 
+    - Graph of |V| vertices and |E| edges
+
     - Space: O(n), Time: O(|V| + |E|)
 
 1. `GetNeighbors()`
@@ -42,17 +44,25 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 
     - Include the weight of the connection in the returned collection
 
+    - Graph of |V| vertices and |E| edges
+
     - Space: O(n), Time: O(n)
 
 1. `Size()`
 
     - Returns the total number of nodes in the graph
 
+    - Graph of |V| vertices and |E| edges
+
     - Space: O(n), Time: O(|V| + |E|)
 
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-- Space: O(1), Time: O(1) (most things in hashtable are only limited by the linked list or array used as each bucket)
+1. `BreadthFirst()`
+
+    - Traverses the entire graph breadth first.
+
+    - Graph of |V| vertices and |E| edges
+
+    - Space: O(n), Time: O(|V| + |E|)
 
 ## Collaborators
 
