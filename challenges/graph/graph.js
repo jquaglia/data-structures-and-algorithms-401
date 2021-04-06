@@ -13,6 +13,25 @@ class Edge {
   }
 }
 
+function getEdge(graph, array) {
+  let total = 0;
+  loop1: for (let i = 0; i < array.length - 1; i++) {
+    const neighbors = graph.getNeighbors(array[i]);
+
+    loop2: for (let j = 0; j < neighbors.length; j++) {
+      let nextPlace = array[i + 1].value;
+      
+      if (neighbors[j].vertex.value === nextPlace) {
+        total += neighbors[j].weight;
+        continue loop1;
+      }
+      continue loop2;
+    }
+    return `${false}, $0`;
+  }
+  return `${true}, $${total}`;
+}
+
 class Graph {
   constructor() {
     this.adjacencyList = new Map();
@@ -183,4 +202,5 @@ module.exports = {
   Vertex,
   Edge,
   Graph,
+  getEdge,
 };

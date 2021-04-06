@@ -64,6 +64,16 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 
     - Space: O(n), Time: O(|V| + |E|)
 
+1. `function getEdge()`
+
+    - which takes in a graph, and an array of city names
+
+    - return whether the full trip is possible with direct flights, and how much it would cost
+
+    - Graph of |V| vertices and |E| edges
+
+    - Space: O(n), Time: O((|V| + |E|)^2)
+
 ## Collaborators
 
 - Carly Dekock

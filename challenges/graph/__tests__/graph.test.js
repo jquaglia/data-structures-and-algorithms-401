@@ -2,7 +2,7 @@
 
 const test = require('../graph.js');
 
-describe('testing the instantiating of a proper hash table', () => {
+describe('testing the instantiating of a proper graph', () => {
   const graph = new test.Graph();
   const one = new test.Vertex('one');
   const two = new test.Vertex('two');
@@ -97,11 +97,47 @@ describe('testing the instantiating of a proper hash table', () => {
     graphFour.addEdge(Monstropolis, Naboo);
     graphFour.addEdge(Naboo, Narnia);
 
-    console.log(graphFour.breadthFirst(Pandora));
+    // console.log(graphFour.breadthFirst(Pandora));
     expect(graphFour.breadthFirst(Pandora)).toBeTruthy();
     expect(graphFour.breadthFirst(Pandora).size).toEqual(6);
     expect(graphFour.breadthFirst(Pandora).has(Arendelle)).toEqual(true);
     expect(graphFour.breadthFirst(Pandora).has(Naboo)).toEqual(true);
     expect(graphFour.breadthFirst(Pandora).has(Metroville)).toEqual(true);
+  });
+
+  it('Should take in a graph and array and return if direct flights are available and how much it will cost', () => {
+    // console.log(graph.breadthFirst(one));
+    const graphFive = new test.Graph();
+    const Pandora = new test.Vertex('Pandora');
+    const Arendelle = new test.Vertex('Arendelle');
+    const Metroville = new test.Vertex('Metroville');
+    const Monstropolis = new test.Vertex('Monstropolis');
+    const Narnia = new test.Vertex('Narnia');
+    const Naboo = new test.Vertex('Naboo');
+
+    graphFive.addVertex(Pandora);
+    graphFive.addVertex(Arendelle);
+    graphFive.addVertex(Metroville);
+    graphFive.addVertex(Monstropolis);
+    graphFive.addVertex(Narnia);
+    graphFive.addVertex(Naboo);
+
+    graphFive.addEdge(Pandora, Arendelle, 150);
+    graphFive.addEdge(Metroville, Pandora, 82);
+    graphFive.addEdge(Arendelle, Metroville, 99);
+    graphFive.addEdge(Arendelle, Monstropolis, 42);
+    graphFive.addEdge(Metroville, Narnia, 37);
+    graphFive.addEdge(Metroville, Naboo, 26);
+    graphFive.addEdge(Monstropolis, Metroville, 105);
+    graphFive.addEdge(Monstropolis, Naboo, 73);
+    graphFive.addEdge(Naboo, Narnia, 250);
+
+    // console.log(graphFive.getNeighbors(Metroville));
+    // console.log(test.getEdge(graphFive, [Metroville, Pandora]));
+    // console.log(graphFive.breadthFirst(Pandora));
+    expect(test.getEdge(graphFive, [Metroville, Pandora])).toEqual(`true, $82`);
+    expect(test.getEdge(graphFive, [Arendelle, Monstropolis, Naboo])).toEqual(`true, $115`);
+    expect(test.getEdge(graphFive, [Naboo, Pandora])).toEqual(`false, $0`);
+    expect(test.getEdge(graphFive, [Narnia, Arendelle, Naboo])).toEqual(`false, $0`);
   });
 });
