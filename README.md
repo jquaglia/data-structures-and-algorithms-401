@@ -42,6 +42,14 @@ This is a collection of all of the code challenges I have done in 401 JS at Code
 
 - [Hash Table](challenges/hashtable/hashtable.js)
 
+- [Repeated Word](challenges/repeatedWord/repeated-word.js)
+
+- [Tree Intersection](challenges/treeIntersection/tree-intersection.js)
+
+- [Left Join](challenges/leftJoin/left-join.js)
+
+- [Graphs](challenges/graph/graph.js)
+
 ## Collaborators
 
 - Bill Moreno
