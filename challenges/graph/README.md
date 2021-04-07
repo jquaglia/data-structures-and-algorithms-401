@@ -74,6 +74,16 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 
     - Space: O(n), Time: O((|V| + |E|)^2)
 
+1. `function depthFirstPre()`
+
+    - which takes in adjacency list as a graph and conducts depth first traversal
+
+    - returns collection of nodes in their pre-order
+
+    - Graph of |V| vertices and |E| edges
+
+    - Space: O(n), Time: O(|V| + |E|)
+
 ## Collaborators
 
 - Carly Dekock

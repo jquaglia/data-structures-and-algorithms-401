@@ -20,7 +20,7 @@ function getEdge(graph, array) {
 
     loop2: for (let j = 0; j < neighbors.length; j++) {
       let nextPlace = array[i + 1].value;
-      
+
       if (neighbors[j].vertex.value === nextPlace) {
         total += neighbors[j].weight;
         continue loop1;
@@ -30,6 +30,26 @@ function getEdge(graph, array) {
     return `${false}, $0`;
   }
   return `${true}, $${total}`;
+}
+
+function depthFirstPre(graph, vertex) {
+  const visitedVertices = new Set();
+
+  visitedVertices.add(vertex);
+
+  const traverse = (current, visited) => {
+    visited.add(current);
+    const neighbors = graph.getNeighbors(current);
+
+    for (let neighbor of neighbors) {
+      if (!visited.has(neighbor.vertex)) {
+        traverse(neighbor.vertex, visited);
+      }
+    }
+  };
+
+  traverse(vertex, visitedVertices);
+  return visitedVertices;
 }
 
 class Graph {
@@ -170,26 +190,35 @@ class Graph {
 
 let test = new Graph();
 
-let one = new Vertex('one');
-let two = new Vertex('two');
-let three = new Vertex('three');
-let four = new Vertex('four');
-let five = new Vertex('five');
-let six = new Vertex('six');
+let a = new Vertex('A');
+let b = new Vertex('B');
+let c = new Vertex('C');
+let d = new Vertex('D');
+let e = new Vertex('E');
+let f = new Vertex('F');
+let g = new Vertex('G');
+let h = new Vertex('H');
 
-test.addVertex(one);
-test.addVertex(two);
-test.addVertex(three);
-test.addVertex(four);
-test.addVertex(five);
-test.addVertex(six);
+test.addVertex(a);
+test.addVertex(b);
+test.addVertex(c);
+test.addVertex(d);
+test.addVertex(e);
+test.addVertex(f);
+test.addVertex(g);
+test.addVertex(h);
 
-test.addEdge(one, three);
-test.addEdge(two, four);
-test.addEdge(one, four);
-test.addEdge(four, two);
-test.addEdge(four, five);
-test.addEdge(two, six);
+test.addEdge(a, b);
+test.addEdge(a, d);
+test.addEdge(b, c);
+test.addEdge(c, g);
+test.addEdge(b, d);
+test.addEdge(d, e);
+test.addEdge(d, h);
+test.addEdge(d, f);
+test.addEdge(h, f);
+
+// console.log(depthFirstPre(test, a));
 
 // const setSpread = test.breadthFirst(one);
 // console.log(...setSpread);
@@ -203,4 +232,5 @@ module.exports = {
   Edge,
   Graph,
   getEdge,
+  depthFirstPre,
 };
