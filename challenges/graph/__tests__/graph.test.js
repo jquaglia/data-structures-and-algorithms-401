@@ -140,4 +140,51 @@ describe('testing the instantiating of a proper graph', () => {
     expect(test.getEdge(graphFive, [Naboo, Pandora])).toEqual(`false, $0`);
     expect(test.getEdge(graphFive, [Narnia, Arendelle, Naboo])).toEqual(`false, $0`);
   });
+
+  it('should take in an adjaceny list as a graph and return pre order depth first traversal', () => {
+    // console.log(graph.breadthFirst(one));
+    const graphSix = new test.Graph();
+    let a = new test.Vertex('A');
+    let b = new test.Vertex('B');
+    let c = new test.Vertex('C');
+    let d = new test.Vertex('D');
+    let e = new test.Vertex('E');
+    let f = new test.Vertex('F');
+    let g = new test.Vertex('G');
+    let h = new test.Vertex('H');
+
+    graphSix.addVertex(a);
+    graphSix.addVertex(b);
+    graphSix.addVertex(c);
+    graphSix.addVertex(d);
+    graphSix.addVertex(e);
+    graphSix.addVertex(f);
+    graphSix.addVertex(g);
+    graphSix.addVertex(h);
+
+    graphSix.addEdge(a, b);
+    graphSix.addEdge(a, d);
+    graphSix.addEdge(b, c);
+    graphSix.addEdge(c, g);
+    graphSix.addEdge(b, d);
+    graphSix.addEdge(d, e);
+    graphSix.addEdge(d, h);
+    graphSix.addEdge(d, f);
+    graphSix.addEdge(h, f);
+
+    const array = Array.from(test.depthFirstPre(graphSix, a));
+    
+    expect(test.depthFirstPre(graphSix, a).size).toEqual(8);
+    expect(test.depthFirstPre(graphSix, a).has(b)).toEqual(true);
+    expect(test.depthFirstPre(graphSix, a).has(h)).toEqual(true);
+    expect(test.depthFirstPre(graphSix, a).has(f)).toEqual(true);
+    expect(array[0].value).toEqual('A');
+    expect(array[1].value).toEqual('B');
+    expect(array[2].value).toEqual('C');
+    expect(array[3].value).toEqual('G');
+    expect(array[4].value).toEqual('D');
+    expect(array[5].value).toEqual('E');
+    expect(array[6].value).toEqual('H');
+    expect(array[7].value).toEqual('F');
+  });
 });
