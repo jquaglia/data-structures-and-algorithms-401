@@ -28,28 +28,30 @@ var reverse = function (x) {
   return result > 0x7FFFFFFF ? 0 : x < 0 ? -result : result;
 };
 
-var reverse2 = function (x) {
-  const reverse = +String(Math.abs(x)).split('').reverse().join('');
+// var reverse2 = function (x) {
+//   const reverse = +String(Math.abs(x)).split('').reverse().join('');
 
-  if (reverse > 0x7FFFFFFF) {
-    return 0;
-  }
+//   if (reverse > 0x7FFFFFFF) {
+//     return 0;
+//   }
 
-  return x < 0 ? -reverse : reverse;
-};
+//   return x < 0 ? -reverse : reverse;
+// };
 
-var reverse3 = function (x) {
-  let reverse = 0;
-  let sign = x < 0;
-  x = Math.abs(x);
-  while (x) {
-    reverse = reverse * 10 + (x % 10);
-    x = Math.floor(x / 10);
-  }
+// var reverse3 = function (x) {
+//   let reverse = 0;
+//   let sign = x < 0;
+//   x = Math.abs(x);
+//   while (x) {
+//     reverse = reverse * 10 + (x % 10);
+//     x = Math.floor(x / 10);
+//   }
 
-  return reverse > 0x7FFFFFFF ? 0 : sign ? -reverse : reverse;
-};
+//   return reverse > 0x7FFFFFFF ? 0 : sign ? -reverse : reverse;
+// };
 
 
 // console.log(reverse3(1032938999));
 // console.log(reverse3(-487));
+
+module.exports = reverse;
