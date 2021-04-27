@@ -8,7 +8,7 @@ var hasPathSum = function (root, targetSum) {
       return;
     }
 
-    total += node.val;
+    total += node.value;
 
     if (!node.left && !node.right && total === targetSum) {
       result = true;
@@ -21,6 +21,29 @@ var hasPathSum = function (root, targetSum) {
   helper(root, 0);
   return result;
 };
+
+// ========= this is the leetcode solution =========
+// var hasPathSum = function (root, targetSum) {
+//   let result = false;
+
+//   const helper = (node, total) => {
+//     if (!node || result) {
+//       return;
+//     }
+
+//     total += node.val;
+
+//     if (!node.left && !node.right && total === targetSum) {
+//       result = true;
+//     }
+
+//     if (node.left) { helper(node.left, total); }
+//     if (node.right) { helper(node.right, total); }
+//   };
+
+//   helper(root, 0);
+//   return result;
+// };
 
 // write a function to validate whether or not two given strings are anagrams. (contain the same letters)
 
@@ -62,3 +85,5 @@ var hasPathSum = function (root, targetSum) {
 // }
 
 // console.log(validateAnagrams(stringOne, stringTwo));
+
+module.exports = hasPathSum;
