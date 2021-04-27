@@ -1,18 +1,17 @@
 'use strict';
 
-const test = require('../reverse-integer.js');
+const test = require('../determine-chess-color.js');
 
-describe('testing function to reverse a signed 32-bit integer', () => {
-  it('should return the reverse of a 32-bit integer', () => {
-    expect(test(422355)).toEqual(553224);
+describe('testing function to determine if a square on a chessboard is white or black', () => {
+  it('should return true if the square is white', () => {
+    expect(test('a2')).toEqual(true);
+    expect(test('c6')).toEqual(true);
+    expect(test('h7')).toEqual(true);
   });
 
-  it('should return the reverse of a negative 32-bit integer', () => {
-    expect(test(-4379)).toEqual(-9734);
-  });
-  
-  it('should return 0 when the integer is over 32 bits', () => {
-    expect(test(103293899)).toEqual(998392301);
-    expect(test(1032938999)).toEqual(0);
+  it('should return false if the square is black', () => {
+    expect(test('a1')).toEqual(false);
+    expect(test('f4')).toEqual(false);
+    expect(test('d2')).toEqual(false);
   });
 });
