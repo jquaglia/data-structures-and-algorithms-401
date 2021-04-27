@@ -34,9 +34,9 @@ This is a collection of all of the code challenges I have done in 401 JS at Code
 
 - [FizzBuzz tree](challenges/fizzBuzzTree/fizz-buzz-tree.js)
 
-- [Insertion Sort Blog](challenges/insertionSort/insertion-sort.js)
+- [Insertion Sort Blog](challenges/insertionSortBlog/insertion-sort.js)
 
-- [Merge Sort Blog](challenges/mergeSort/merge-sort.js)
+- [Merge Sort Blog](challenges/mergeSortBlog/merge-sort.js)
 
 - [Quick Sort Blog](challenges/quickSort/quick-sort.js)
 
