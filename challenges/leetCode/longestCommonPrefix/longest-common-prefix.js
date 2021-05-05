@@ -56,8 +56,8 @@ var longestCommonPrefix = function (strs) {
 //   return lcp;
 // };
 
-const strs = ['dog', 'racecar', 'car'];
-const strings = ['flower', 'flow', 'flowight'];
-console.log(longestCommonPrefix(strings));
+// const strs = ['dog', 'racecar', 'car'];
+// const strings = ['flower', 'flow', 'flowight'];
+// console.log(longestCommonPrefix(strings));
 
 module.exports = longestCommonPrefix;
