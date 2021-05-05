@@ -46,11 +46,13 @@ var isValid = function (s) {
       if (s[i] !== map[last]) { return false; }
     }
   }
-  
+
   if (arr.length !== 0) { return false; }
 
   return true;
 };
 
-const string = '(){';
-console.log(isValid(string));
+// const string = '(){';
+// console.log(isValid(string));
+
+module.exports = isValid;
