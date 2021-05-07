@@ -19,7 +19,7 @@
 // Output: 5, nums = [0,1,4,0,3]
 // Explanation: Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4. Note that the order of those five elements can be arbitrary. It doesn't matter what values are set beyond the returned length.
 
-var removeElement = function(nums, val) {
+var removeElement = function (nums, val) {
 
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] === val) {
@@ -30,5 +30,15 @@ var removeElement = function(nums, val) {
 
   return nums.length;
 };
+
+// Found this online for "in place" problems. However, this does not return the true length of the array nor does it replace the last values in it.
+
+// var removeElement = function (nums, val) {
+//   var zeroStartIdx = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== val) { nums[zeroStartIdx++] = nums[i]; }
+//   }
+//   return zeroStartIdx;
+// };
 
 module.exports = removeElement;
