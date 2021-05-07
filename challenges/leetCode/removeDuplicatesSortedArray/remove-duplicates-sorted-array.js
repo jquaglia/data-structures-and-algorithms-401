@@ -59,7 +59,7 @@ var removeDuplicates = function (nums) {
   return nums.length;
 };
 
+// const numbers = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+// console.log(removeDuplicates(numbers));
 
-const numbers = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
-
-console.log(removeDuplicates(numbers));
+module.exports = removeDuplicates;
