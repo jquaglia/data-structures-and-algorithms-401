@@ -34,5 +34,6 @@ var strStr = function (haystack, needle) {
   }
 };
 
+// console.log(strStr('hello', 'll'));
 
-console.log(strStr('hello', 'll'));
+module.exports = strStr;
