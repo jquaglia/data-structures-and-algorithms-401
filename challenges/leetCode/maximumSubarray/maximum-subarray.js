@@ -46,4 +46,27 @@ var maxSubArray = function (nums) {
 //   return maxSum;
 // };
 
+// Kadane's Algorithm
+// var maxSubArray = function (nums) {
+//   let max = nums[0];
+//   let maxSoFar = nums[0];
+
+//   for (let i = 1; i < nums.length - 1; i++) {
+//     maxSoFar = Math.max(nums[i], maxSoFar + nums[i]);
+//     if (maxSoFar > max) { max = maxSoFar; }
+//   }
+
+//   return max;
+// };
+
+
+// var maxSubArray = function(nums) {
+//   for (let i = 1; i < nums.length; i++) {
+//     nums[i] = Math.max(nums[i], nums[i] + nums[i - 1]);
+//   }
+//   return Math.max(...nums);
+// };
+
 console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+module.exports = maxSubArray;
