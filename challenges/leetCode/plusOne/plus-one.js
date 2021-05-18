@@ -6,8 +6,6 @@
 
 // You may assume the integer does not contain any leading zero, except the number 0 itself.
 
-
-
 // Example 1:
 // Input: digits = [1,2,3]
 // Output: [1,2,4]
@@ -39,6 +37,6 @@ var plusOne = function (digits) {
   return digits;
 };
 
-console.log(plusOne([9]));
+// console.log(plusOne([9]));
 
 module.exports = plusOne;
