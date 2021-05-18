@@ -11,5 +11,6 @@ describe('testing function to add 1 to an array of decimal digits that represent
   it('should add 1 properly to a number ending in 9', () => {
     expect(test([2, 3, 6, 9, 4, 2, 9])).toEqual([2, 3, 6, 9, 4, 3, 0]);
     expect(test([2, 3, 6, 9, 9, 9, 9])).toEqual([2, 3, 7, 0, 0, 0, 0]);
+    expect(test([9])).toEqual([1, 0]);
   });
 });
