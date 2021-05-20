@@ -17,6 +17,19 @@ var mySqrt = function(x) {
   return parseInt(Math.sqrt(x).toString().split('.')[0]);
 };
 
+// var mySqrt = function (x) {
+//   let start = 0;
+//   let end = x;
+//   let res = 0;
+//   while (end > start) {
+//     res = Math.ceil((start + end) / 2);
+//     if (res * res <= x && (res + 1) * (res + 1) > x){ return res; }
+//     if (res * res < x) { start = res; }
+//     else { end = res; }
+//   }
+//   return res;
+// };
+
 // const mySqrt = function(x) {
 //   let result = 1;
 //   while (result*result <= x) result++;
