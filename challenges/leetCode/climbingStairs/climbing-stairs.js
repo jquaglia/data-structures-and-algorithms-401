@@ -33,4 +33,6 @@ var climbStairs = function (n) {
 
 // Space: O(n), Time: O(n)
 
-console.log(climbStairs(7));
+// console.log(climbStairs(7));
+
+module.exports = climbStairs;
