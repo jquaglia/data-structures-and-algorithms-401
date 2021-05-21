@@ -13,8 +13,8 @@
 // Output: 2
 // Explanation: The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.
 
-var mySqrt = function(x) {
-  return parseInt(Math.sqrt(x).toString().split('.')[0]);
+var mySqrt = function (x) {
+    return parseInt(Math.sqrt(x).toString().split('.')[0]);
 };
 
 // var mySqrt = function (x) {
