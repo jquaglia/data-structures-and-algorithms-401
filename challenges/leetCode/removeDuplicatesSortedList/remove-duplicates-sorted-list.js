@@ -51,6 +51,12 @@ var deleteDuplicates = function (head) {
 };
 
 // var deleteDuplicates = function (head) {
+//     if (!head || !head.next) return head;
+//     head.next = deleteDuplicates(head.next);
+//     return head.val === head.next.val ? head.next: head;
+// };
+
+// var deleteDuplicates = function (head) {
 //     if (!head) { return head; }
 //     const hash = {};
 //     let current = head;
