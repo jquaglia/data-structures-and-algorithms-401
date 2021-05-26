@@ -29,6 +29,9 @@
 //     return nums1;
 // };
 
+// time: O(n^2)
+// space: O(n^2)
+
 var merge = function (nums1, m, nums2, n) {
     nums1.splice(m, nums1.length - m);
 
@@ -49,3 +52,5 @@ var merge = function (nums1, m, nums2, n) {
 // console.log(merge([-1, 0, 0, 3, 3, 3, 0, 0, 0], 6, [1, 2, 2], 3));
 
 // console.log(merge([0], 0, [1], 1));
+
+module.exports = merge;
