@@ -22,6 +22,8 @@
 // Input: root = [1,null,2]
 // Output: [1,2]
 
+
+// Space: O(n), Time: O(n)
 var inorderTraversal = function (root) {
     if (!root) { return; }
     const result = [];
@@ -35,3 +37,12 @@ var inorderTraversal = function (root) {
     inOrder(root);
     return result;
 };
+
+// TODO: Really cool traversal I found on leetcode! Holy cow this is genius!
+// const inorderTraversal = root => {
+//     if (!root) {
+//         return []
+//     }
+    
+//     return [...inorderTraversal(root.left), root.val, ...inorderTraversal(root.right)]
+// }
