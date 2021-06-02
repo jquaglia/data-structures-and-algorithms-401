@@ -20,6 +20,8 @@
 // Input: root = [0]
 // Output: 1
 
+const a = require('../../tree/tree.js');
+
 const maxDepth = root => {
     if (!root) return 0;
     let result = 0;
@@ -36,6 +38,17 @@ const maxDepth = root => {
     preOrder(root, 0);
     return result;
 };
+
+const aTree = new a.BiTree();
+aTree.root = new a.Node(1);
+aTree.root.left = new a.Node(3);
+aTree.root.right = new a.Node(2);
+aTree.root.right.left = new a.Node(9);
+aTree.root.right.left.right = new a.Node(5);
+aTree.root.right.right = new a.Node(7);
+
+// console.log(aTree.root);
+// console.log(maxDepth(aTree));
 
 // const maxDepth = root => {
 //     return !root ? 0 : 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
@@ -57,3 +70,5 @@ const maxDepth = root => {
 //     preOrder(root, 0);
 //     return Math.max.apply(null, array);
 // };
+
+module.exports = maxDepth;
