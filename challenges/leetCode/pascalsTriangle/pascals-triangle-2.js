@@ -16,6 +16,7 @@
 // Input: rowIndex = 1
 // Output: [1,1]
 
+// Space: O(n^2), Time: O(n^2)
 const getRow = rowIndex => {
     const triangle = new Array(rowIndex + 1);
 
@@ -32,4 +33,48 @@ const getRow = rowIndex => {
     return triangle[rowIndex];
 };
 
-// const getRow
+// found this online claiming to be O(n) time and space
+// const getRow = rowIndex => {
+//     const result = new Array(rowIndex + 1);
+//     result[0] = result[rowIndex] = 1;
+
+//     for (let i = 1, up = rowIndex; i < rowIndex; i++, up--) {
+//         result[i] = result[i - 1] * up / i;
+//     }
+//     return result;
+// };
+
+// const getRow = rowIndex => {
+//     const row = [1];
+
+//     while (rowIndex--) {
+//         row.push(1);
+//         for (let i = row.length - 2; i > 0; --i) {
+//             row[i] += row[i - 1];
+//         }
+//     }
+//     return row;
+// }
+
+
+// Came up with this on my own, to use less memory... seems slower though? Oh well..
+
+// const getRow = rowIndex => {
+//     if (rowIndex === 0) return [1];
+//     if (rowIndex === 1) return [1, 1];
+
+//     let row = [1, 1];
+
+//     for (let i = 0; i < rowIndex + 1; i++) {
+//         let tempRow = new Array(i + 1);
+//         tempRow[0] = 1;
+//         tempRow[tempRow.length - 1] = 1;
+
+//         for (let j = 1; j < tempRow.length - 1; j++) {
+//             tempRow[j] = row[j] + row[j - 1];
+//         }
+//         row = tempRow;
+//     }
+//     return row;
+// };
+
