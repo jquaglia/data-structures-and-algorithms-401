@@ -20,31 +20,38 @@
 // Algo
 // we want to find the biggest difference between 2 numbers in the array, the smallest number has to come before the bigger number. 
 
+// const maxProfit = prices => {
+//     let profit = 0;
+
+//     for (let i = 0; i < prices.length; i++) {
+//         let tempLow = prices[i];
+
+//         for (let j = i; j < prices.length; j++) {
+//             let tempProfit = prices[j] - tempLow;
+
+//             if (tempProfit > profit) {
+//                 profit = tempProfit;
+//             }
+//         }
+//     }
+//     return profit;
+// };
+
 const maxProfit = prices => {
+    let buy = Infinity;
     let profit = 0;
 
     for (let i = 0; i < prices.length; i++) {
-        let tempLow = prices[i];
+        const current = prices[i];
 
-        for (let j = i; j < prices.length; j++) {
-            let tempProfit = prices[j] - tempLow;
+        const newLow = current < buy;
+        if (newLow) { buy = current; }
 
-            if (tempProfit > profit) {
-                profit = tempProfit;
-            }
-        }
+        const newProfit = current - buy > profit;
+        if (newProfit) { profit = current - buy; }
     }
     return profit;
 };
 
-const maxProfit = prices => {
-    let profit = 0;
-    const hash = {};
-    for (let i = 0; i < prices.length; i++) {
-        
-    }
 
-};
-
-
-console.log(maxProfit([7,6,4,3,1]));
+console.log(maxProfit([7, 6, 4, 3, 1]));
