@@ -23,18 +23,40 @@
 
 // Algo -> recurse/go through the linked list, check to see if each node is located in js map structure, if so return false, else default return true at end of everything. -> this will not work if there are exact nodes that are copied.
 
+// Big O -> Space: O(2n), Time: O(n)
 const hasCycle = head => {
     if (!head) return false;
 
     const map = new Map();
-    let current = head;
 
-    while (current) {
-        if (map.has(current)) return true;
-        else {
-            map.set(current, current.value);
-            current = current.next;
-        }
+    while (head) {
+        if (map.has(head)) return true;
+        map.set(head, head.val);
+        head = head.next;
     }
     return false;
 };
+
+// Big O -> Space: O(1), Time: O(n)
+// const hasCycle = head => {
+//     let slow = fast = head;
+
+//     while (fast && fast.next) {
+//         slow = slow.next;
+//         fast = fast.next.next;
+//         if (slow === fast) return true;
+//     }
+//     return false;
+// };
+
+// Big O -> Space: O(n), Time: O(n)
+// const hasCycle = head => {
+//     if (!head) return false;
+
+//     while (head) {
+//         if (head.visited) return true;
+//         head.visited = true;
+//         head = head.next;
+//     }
+//     return false;
+// };
