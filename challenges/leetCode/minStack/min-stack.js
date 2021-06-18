@@ -80,3 +80,33 @@ MinStack.prototype.getMin = function () {
  * var param_3 = obj.top()
  * var param_4 = obj.getMin()
  */
+
+// Found this online on leetcode -> this makes more sense to me.
+//  class MinStack {
+//     constructor() {
+//         this.stack = [];
+//         this.minArr = [{val: Infinity, count: 1}];
+//     }
+    
+//     push(x) {
+//         this.stack.push(x);
+//         let min = this.minArr[this.minArr.length-1];
+//         if(x === min.val) min.count++;
+//         else if(x < min.val) this.minArr.push({val: x, count: 1});
+//     }
+    
+//     pop() {
+//         let item = this.stack.pop();
+//         let min = this.minArr[this.minArr.length-1];
+//         if(item === min.val) min.count--;
+//         if(!min.count) this.minArr.pop();
+//     }
+    
+//     top() {
+//         return this.stack[this.stack.length-1];
+//     }
+    
+//     getMin() {
+//         return this.minArr[this.minArr.length-1].val;
+//     }
+// }
