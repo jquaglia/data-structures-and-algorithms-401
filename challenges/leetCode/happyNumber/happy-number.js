@@ -23,6 +23,7 @@
 // Input: n = 2
 // Output: false
 
+// BIG O -> TIME: O(), SPACE: O()
 const isHappy = n => {
   n = n.toString();
 
@@ -43,6 +44,46 @@ const isHappy = n => {
 
   return result;
 };
+
+// const isHappy = n => {
+//   let hash = {};
+//   let happy = 0;
+
+//   while (happy !== 1) {
+//     let current = n;
+
+//     while (current !== 0) {
+//       happy += (current % 10) ** 2;
+//       current = Math.floor(current / 10);
+//     }
+
+//     if (happy === 1) return true;
+//     if (hash[happy]) return false;
+//     hash[happy] = happy;
+//     n = happy;
+//     happy = 0;
+//   }
+//   return true;
+// };
+
+// const helper = (n, arr) => {
+//   if (arr && arr.indexOf(n) != -1) {
+//     return false;
+//   }
+//   arr.push(n);
+//   let num = 0;
+//   while (n > 0) {
+//     num = num + Math.pow(n % 10, 2);
+//     n = Math.floor(n / 10);
+//   }
+//   if (num == 1) return true;
+//   return helper(num, arr);
+// }
+
+// const isHappy = n => {
+//   let arr = [];
+//   return helper(n, arr);
+// }
 
 
 console.log(isHappy(2));
