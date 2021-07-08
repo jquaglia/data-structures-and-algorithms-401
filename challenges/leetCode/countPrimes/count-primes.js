@@ -43,19 +43,80 @@
 //   return primes.length;
 // }
 
+// const countPrimes = n => {
+//   const isPrime = Array(n).fill(true);
+//   let count = 0;
+
+//   for (let i = 2; i < n; i++) {
+//     if (isPrime[i]) {
+//       count++;
+//       for (let j = i; j < n; j += i) {
+//         isPrime[j] = false;
+//       }
+//     }
+//   }
+
+//   return count;
+// }
+
+// const countPrimes = n => {
+//   const isPrime = Array(n).fill(0);
+//   let primes = [];
+
+//   for (let i = 2; i < n; i++) {
+//     if (isPrime[i] === 0) {
+//       isPrime[i] = i;
+//       primes.push(i);
+//     }
+//     for (let j = 0; j < primes.length && primes[j] <= isPrime[i] && i * primes[j] < n; j++) {
+//       isPrime[i * primes[j]] = primes[j];
+//     }
+//   }
+
+//   return primes.length;
+// }
+
+// const countPrimes = n => {
+//   const nums = new Uint8Array(n).fill(1);
+//   const limit = Math.floor(Math.sqrt(n - 1));
+
+//   nums[0] = 0;
+//   nums[1] = 0;
+
+//   for (let i = 2; i <= limit; i++) {
+//     if (nums[i]) {
+//       for (let j = i + i; j < n; j += i) {
+//         nums[j] = 0;
+//       }
+//     }
+//   }
+//   return nums.reduce((sum, curr) => sum + curr, 0);
+// }
+
+// const countPrimes = n => {
+//   let isPrime = new Array(n).fill(true);
+//   isPrime[1] = false;
+//   for (let i = 2; i * i < n; i++) {
+//     if (!isPrime[i]) continue;
+//     for (let j = i * i; j < n; j += i) isPrime[j] = false;
+//   }
+
+//   let count = 0;
+//   for (let i = 1; i < n; i++) {
+//     if (isPrime[i]) count++;
+//   }
+//   return count;
+// }
+
 const countPrimes = n => {
-  const isPrime = Array(n).fill(true);
   let count = 0;
 
-  for (let i = 2; i < n; i++) {
-    if (isPrime[i]) {
-      count++;
-      for (let j = i; j < n; j += i) {
-        isPrime[j] = false;
-      }
+  loop1: for (let i = 2; i < n; i++) {
+    for (let j = 2; j * j <= i; j++) {
+      if (i % j === 0) continue loop1;
     }
+    count++;
   }
-
   return count;
 }
 
