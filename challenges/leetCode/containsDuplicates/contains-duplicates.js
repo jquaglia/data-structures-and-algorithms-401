@@ -23,11 +23,20 @@
 //   return false;
 // };
 
-const containsDuplicate = nums => {
-  if ([...new Set(nums)].length === nums.length)
-    return false;
-  return true;
-};
+// const containsDuplicate = nums => {
+//   if ([...new Set(nums)].length === nums.length)
+//     return false;
+//   return true;
+// };
 
+const containsDuplicate = nums => {
+  let set = new Set();
+
+  for (let num in nums) {
+    if (set.has(nums[num])) { return true; }
+    else { set.add(nums[num]); }
+  }
+  return false;
+};
 
 console.log(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));
