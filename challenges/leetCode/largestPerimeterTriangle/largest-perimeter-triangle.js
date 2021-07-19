@@ -19,50 +19,34 @@
 // Output: 8
 
 const largestPerimeter = nums => {
-  if (nums.length < 3) return 0;
+  let sorted = nums.sort((a, b) => b - a);
 
-  let one = 0;
-  let two = 0;
-  let three = 0;
-  let four = 0;
-  let five = 0;
+  while (sorted.length > 2) {
+    let one = sorted[0];
+    let two = sorted[1];
+    let three = sorted[2];
 
-  for (let num of nums) {
-    if (num > one) {
-      five = four;
-      four = three;
-      three = two;
-      two = one;
-      one = num;
-    }
-    else if (num > two) {
-      five = four;
-      four = three;
-      three = two;
-      two = num;
-    }
-    else if (num > three){
-      five = four;
-      four = three;
-      three = num;
-    }
-    else if (num > four){
-      five = four;
-      four = three;
-    }
-    else if (num > five){
-      five = num;
-    }
+    if (two + three > one) return two + three + one;
+    else { sorted.shift(); }
   }
 
-  while (two + three <= one) {
-    four = five;
-    three = four;
-    two = three;
-    one = two;
-  }
-
-  return one < 1 || two < 1 || three < 1 ? 0 : one + two + three;
+  return 0;
 };
 
-console.log(largestPerimeter([1, 2, 1]));
+// Heron's formula
+// const largestPerimeter = nums => {
+//   const sorted = nums.sort((a, b) => b - a);
+
+//   for (let i = 0; i < sorted.length - 2; i++) {
+//     let a = sorted[i];
+//     let b = sorted[i + 1];
+//     let c = sorted[i + 2];
+//     let semiPerim = (a + b + c) / 2;
+//     if (semiPerim * (semiPerim - a) * (semiPerim - b) * (semiPerim - c) > 0) {
+//       return semiPerim * 2;
+//     }
+//   }
+//   return 0;
+// };
+
+console.log(largestPerimeter([3, 6, 2, 3]));
