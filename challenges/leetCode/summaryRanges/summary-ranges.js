@@ -64,4 +64,23 @@ const summaryRanges = (nums) => {
   return result;
 };
 
-console.log(summaryRanges([0, 2, 3, 4, 6, 8, 9]));
+// const summaryRanges = nums => {
+//   let slowPointer = 0;
+//   const output = [];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (i === nums.length - 1 || nums[i] !== nums[i + 1] - 1) {
+//       if (slowPointer === i) output.push(nums[i].toString());
+//       else {
+//         let str = `${nums[slowPointer]}->${nums[i]}`;
+//         output.push(str);
+//       }
+//       slowPointer = i + 1;
+//     }
+//   }
+//   return output;
+// }
+
+// console.log(summaryRanges([0, 2, 3, 4, 6, 8, 9]));
+
+module.exports = summaryRanges;
